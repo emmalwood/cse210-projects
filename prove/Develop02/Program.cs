@@ -33,6 +33,9 @@ public class Program
                 case 5:
                     Console.WriteLine("Quit");
                     break;
+                default:
+                    Console.WriteLine("Invalid option");
+                    break;
             }   
 
         } 

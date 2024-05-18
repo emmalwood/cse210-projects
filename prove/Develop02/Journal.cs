@@ -9,11 +9,15 @@ public class Journal
 
     private List<string> prompts = new List<string>()
     {
-        "What was the best part of your day?", 
-        "What was the worst part of your day?",
+        "What was the best part of my day?", 
+        "What was the worst part of my day?",
         "How was the weather today?",
         "What happened in the news?",
-        "Who did you interact with today?"
+        "Who did I interact with today?",
+        "How did I see the Lord's hand in my life today?",
+        "What was the strongest emotion I felt today?",
+        "If I could do over one thing I did today, what would it be?",
+        "What do I hope to do tomorrow?"
     };
 
     // in python   list = ["stuff", "stuff2"]
@@ -23,8 +27,8 @@ public class Journal
         // python: prompts[0], prompts[0] 
         Random rnd = new Random();
 
-        // python:   random.randint(0,4)
-        string prompt =  prompts[rnd.Next(0,4)];
+        // python:   random.randint(0,8)
+        string prompt =  prompts[rnd.Next(0,8)];
 
         Console.WriteLine(prompt);
 
