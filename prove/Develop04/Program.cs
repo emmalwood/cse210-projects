@@ -10,9 +10,7 @@ class Program
         bool keepRunning = true;
         while(keepRunning)
         {
-            keepRunning = menu.ChooseAndRun();
+            keepRunning = menu.MenuOptions();
         } 
-        //call menu from activity
-        //Menu.MenuOptions();?
     }
 }

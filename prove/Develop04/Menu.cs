@@ -1,39 +1,47 @@
 using System;
 
 class Menu
-{
-    public void MenuOptions()
+{   
+    private string[] menuItems = 
     {
-        Console.WriteLine("Welcome to the Mindfulness Program!");
-
-        Console.WriteLine("Menu Option:\n 1.Start breathing activity \n 2.Start reflecting activity \n 3.Start listing activity \n 4.Quit");
-
-        Console.WriteLine("Please select a menu option: \n ");
+    "1.Start breathing activity", 
+    "2.Start reflecting activity", 
+    "3.Start listing activity",
+    "4.Quit"
+    }; 
+      
+    public bool MenuOptions()
+    {
+        Console.WriteLine("\n Menu Options:");
+        for (int i = 0; i < menuItems.Length; i++)
+        {
+            Console.WriteLine($"{i + 1}. {menuItems[i]}");
+        }
         
-        string choice = Console.ReadLine();
+        int choice = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine();
 
-            if (choice == "1")
-                {
-                    //Menu.Breathing Activity
-                    //call from breathing.cs
+            switch (choice)
+            {
+                case 1:
+                    Breathing breathing = new Breathing();
+                    BreathingActivity.Run();
+                    break;
+                case 2:
+                    //Reflecting reflecting = new Reflecting();
+                    //reflecting.Run();
+                    break;
+                case 3:
+                    //Listing listing = new Listing();
+                    //listing.Run();
+                    break;
+                case 4:
+                    Console.WriteLine("Quitting now...");
+                    return false;
+                default:
+                    Console.WriteLine("Invalid option.");
+                    break;
                 }
-            else if (choice == "2")
-                {
-                    //Menu.ReflectingActivity
-                    //call from reflecting.cs
-                }
-            else if (choice == "3")
-                {
-                    //Menu.ListingActivity
-                    //call from listing.cs
-                }
-            else if (choice =="4")
-                {
-                    //exit program
-                }
-            else
-                {
-                    Console.WriteLine("Invalid choice");
-                }
+        return true;
         }
 }
